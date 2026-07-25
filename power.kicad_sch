@@ -7390,7 +7390,7 @@
 				)
 			)
 		)
-		(property "Footprint" "IND_SRP4020_BRN"
+		(property "Footprint" "SRP4020TA_1R5M:IND_SRP4020_BRN"
 			(at 158.75 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -9290,7 +9290,7 @@
 				)
 			)
 		)
-		(property "Footprint" "RNM0015A"
+		(property "Footprint" "TPS63070RNMR:RNM0015A"
 			(at 167.64 91.44 0)
 			(hide yes)
 			(show_name no)

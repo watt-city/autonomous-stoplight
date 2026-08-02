@@ -4069,16 +4069,16 @@
 		(uuid "670460d8-2880-41ff-ad92-6dafef3ceecb")
 	)
 	(junction
-		(at 163.83 137.16)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "72e5bef9-e1d9-4f19-b25d-f05ca163c9ca")
-	)
-	(junction
 		(at 146.05 86.36)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7c0c1bbd-fae4-4b6f-b737-e8bedfe19c44")
+	)
+	(junction
+		(at 163.83 137.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "91e4e4de-8565-4bab-bb52-0b7acd0ae8cc")
 	)
 	(junction
 		(at 73.66 90.17)
@@ -4099,6 +4099,12 @@
 		(uuid "a781456f-716d-4ac2-aa2f-97f7496c4640")
 	)
 	(junction
+		(at 163.83 156.21)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "aef6d251-4439-4523-a304-5e3a872848e8")
+	)
+	(junction
 		(at 146.05 78.74)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4115,6 +4121,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e1954435-0f56-402c-b2b8-f4e6d6dca74c")
+	)
+	(junction
+		(at 163.83 139.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ed1dfdbe-eb1a-4bb9-8cf6-1f88f1c37b84")
 	)
 	(junction
 		(at 66.04 49.53)
@@ -4274,16 +4286,6 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 137.16) (xy 163.83 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0804d597-4f8b-4a4c-878e-fef533a821ef")
-	)
-	(wire
-		(pts
 			(xy 73.66 91.44) (xy 73.66 90.17)
 		)
 		(stroke
@@ -4374,6 +4376,16 @@
 	)
 	(wire
 		(pts
+			(xy 157.48 139.7) (xy 163.83 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2de79c23-6198-4b9a-b233-c8e8f9f303b1")
+	)
+	(wire
+		(pts
 			(xy 77.47 90.17) (xy 77.47 82.55)
 		)
 		(stroke
@@ -4411,6 +4423,16 @@
 			(type default)
 		)
 		(uuid "393721c1-bf24-4a95-b8d6-2aea4655e17e")
+	)
+	(wire
+		(pts
+			(xy 148.59 137.16) (xy 163.83 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3941d998-f44e-46f7-8cb8-95f62d110cfc")
 	)
 	(wire
 		(pts
@@ -4484,6 +4506,16 @@
 	)
 	(wire
 		(pts
+			(xy 157.48 139.7) (xy 157.48 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4e8a3983-805d-4cf0-a6bf-c1baa07a7852")
+	)
+	(wire
+		(pts
 			(xy 69.85 73.66) (xy 69.85 74.93)
 		)
 		(stroke
@@ -4531,6 +4563,16 @@
 			(type default)
 		)
 		(uuid "5fd8d456-9395-45f8-be19-74e91522e1e3")
+	)
+	(wire
+		(pts
+			(xy 163.83 139.7) (xy 163.83 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6c4886dd-b7f1-4a46-8468-0a6291b3cd25")
 	)
 	(wire
 		(pts
@@ -4601,6 +4643,16 @@
 			(type default)
 		)
 		(uuid "802da09a-2043-4b1c-826a-a38115740932")
+	)
+	(wire
+		(pts
+			(xy 157.48 148.59) (xy 157.48 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "829ccb32-b48b-437b-8cab-55435f782d47")
 	)
 	(wire
 		(pts
@@ -4704,6 +4756,16 @@
 	)
 	(wire
 		(pts
+			(xy 163.83 140.97) (xy 163.83 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a0242076-a3c0-4aaa-a0e2-3d55caf449b1")
+	)
+	(wire
+		(pts
 			(xy 69.85 73.66) (xy 77.47 73.66)
 		)
 		(stroke
@@ -4741,6 +4803,16 @@
 			(type default)
 		)
 		(uuid "afa0fc2c-7952-4300-a8b9-7aa2bd7e1ef8")
+	)
+	(wire
+		(pts
+			(xy 157.48 156.21) (xy 163.83 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b29ceb77-a7c5-404f-87e9-d35ac37c4b0b")
 	)
 	(wire
 		(pts
@@ -4791,6 +4863,16 @@
 			(type default)
 		)
 		(uuid "c1bd4010-a362-471f-90cb-81d8781b7f33")
+	)
+	(wire
+		(pts
+			(xy 163.83 157.48) (xy 163.83 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cb7f1fce-3a2c-42f7-b596-4256611e6d50")
 	)
 	(wire
 		(pts
@@ -6538,7 +6620,7 @@
 	)
 	(symbol
 		(lib_id "TS-1088-AR02016:TS-1088-AR02016")
-		(at 163.83 144.78 90)
+		(at 163.83 148.59 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6549,7 +6631,7 @@
 		(fields_autoplaced yes)
 		(uuid "45cf929f-302c-4620-80d3-857eba5e5757")
 		(property "Reference" "S302"
-			(at 165.1 143.5099 90)
+			(at 165.1 147.3199 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6560,7 +6642,7 @@
 			)
 		)
 		(property "Value" "TS-1088-AR02016"
-			(at 165.1 146.0499 90)
+			(at 165.1 149.8599 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6571,7 +6653,7 @@
 			)
 		)
 		(property "Footprint" "TS-1088-AR02016:SW_TS-1088-AR02016"
-			(at 163.83 144.78 0)
+			(at 163.83 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6583,7 +6665,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 163.83 144.78 0)
+			(at 163.83 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6594,7 +6676,7 @@
 			)
 		)
 		(property "Description" "50mA 4mm 100MΩ 100,000 Times 12V 160gf 3mm 2mm Round Button Vertical welding SPST SMD Tactile Switches ROHS"
-			(at 163.83 144.78 0)
+			(at 163.83 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6606,7 +6688,7 @@
 			)
 		)
 		(property "MF" "Xunpu"
-			(at 163.83 144.78 0)
+			(at 163.83 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6618,7 +6700,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" "2.0 mm"
-			(at 163.83 144.78 0)
+			(at 163.83 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6630,7 +6712,7 @@
 			)
 		)
 		(property "Package" "Package"
-			(at 163.83 144.78 0)
+			(at 163.83 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6642,7 +6724,7 @@
 			)
 		)
 		(property "Price" "None"
-			(at 163.83 144.78 0)
+			(at 163.83 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6654,7 +6736,7 @@
 			)
 		)
 		(property "Check_prices" "https://www.snapeda.com/parts/TS-1088-AR02016/Xunpu/view-part/?ref=eda"
-			(at 163.83 144.78 0)
+			(at 163.83 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6666,7 +6748,7 @@
 			)
 		)
 		(property "STANDARD" "Manufacturer Recommendations"
-			(at 163.83 144.78 0)
+			(at 163.83 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6678,7 +6760,7 @@
 			)
 		)
 		(property "PARTREV" "N/A"
-			(at 163.83 144.78 0)
+			(at 163.83 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6690,7 +6772,7 @@
 			)
 		)
 		(property "SnapEDA_Link" "https://www.snapeda.com/parts/TS-1088-AR02016/Xunpu/view-part/?ref=snap"
-			(at 163.83 144.78 0)
+			(at 163.83 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6702,7 +6784,7 @@
 			)
 		)
 		(property "MP" "TS-1088-AR02016"
-			(at 163.83 144.78 0)
+			(at 163.83 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6714,7 +6796,7 @@
 			)
 		)
 		(property "Availability" "Not in stock"
-			(at 163.83 144.78 0)
+			(at 163.83 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6726,7 +6808,7 @@
 			)
 		)
 		(property "MANUFACTURER" "Xunpu"
-			(at 163.83 144.78 0)
+			(at 163.83 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7884,6 +7966,228 @@
 		)
 	)
 	(symbol
+		(lib_id "bfr_capacitors:06035C104KAT2A")
+		(at 157.48 144.78 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "9af1c812-47db-46ea-b9d0-f0b4500aa708")
+		(property "Reference" "C305"
+			(at 153.162 144.78 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100n"
+			(at 154.432 144.526 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+			(at 157.48 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C14663.pdf"
+			(at 157.48 140.97 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "100nF±10% X7R 16V JLCPCB Basic 0603 Capacitor"
+			(at 157.48 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "SUBCKT"
+			(at 157.48 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=P1 2=P2"
+			(at 157.48 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Library" "${BFRUH_DIR}/Electronics/spice_models/bfr_capacitors/06035C104KAT2A.lib"
+			(at 157.48 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Name" "06035C104KAT2A"
+			(at 157.48 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Pretty Name" "100nF 16V 0603 Capacitor"
+			(at 157.48 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Qty/Unit" ""
+			(at 157.48 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Cost/Unit" ""
+			(at 157.48 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Order From" "LCSC"
+			(at 157.48 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Digikey P/N" "478-KGM15BR71H104KTCT-ND"
+			(at 157.48 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Mouser P/N" "581-06035C104KAT2A"
+			(at 157.48 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC P/N" "C14663"
+			(at 157.48 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB Basic Part" "Yes"
+			(at 157.48 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Created by" "capacitor_generator.py script using capacitor_bible_spec.txt"
+			(at 157.48 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "cee8e292-9112-4fe9-bf36-def511220e07")
+		)
+		(pin "2"
+			(uuid "17440210-a68e-4958-b20d-705c4b3d44aa")
+		)
+		(instances
+			(project "watt_city_stoplight_pcb"
+				(path "/b4a4f794-1678-4879-8515-a84d8e78c2b5/3dd86ff8-e3bb-420d-8a24-6450469b82c4"
+					(reference "C305")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 73.66 91.44 0)
 		(unit 1)
@@ -8343,7 +8647,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 163.83 152.4 0)
+		(at 163.83 157.48 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8354,7 +8658,7 @@
 		(fields_autoplaced yes)
 		(uuid "b66be035-6e79-4fd6-8b44-cfc45339ccbc")
 		(property "Reference" "#PWR0305"
-			(at 163.83 158.75 0)
+			(at 163.83 163.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8365,7 +8669,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 163.83 157.48 0)
+			(at 163.83 162.56 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8375,7 +8679,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 163.83 152.4 0)
+			(at 163.83 157.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8386,7 +8690,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 163.83 152.4 0)
+			(at 163.83 157.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8397,7 +8701,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 163.83 152.4 0)
+			(at 163.83 157.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

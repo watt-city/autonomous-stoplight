@@ -3416,7 +3416,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "CONN_S2B-PH-K-S_JST"
+		(property "Footprint" "S2B-PH_K_S:CONN_S2B-PH-K-S_JST"
 			(at 38.1 88.9 0)
 			(hide yes)
 			(show_name no)

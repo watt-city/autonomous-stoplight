@@ -89,7 +89,7 @@ Copy `watt_link.h` into your sketch folder rather than redefining the struct, so
 - KiCad **10** or newer is required to open the project.
 - **Only one person edits at a time.** Claim it in `#watt-city` on Slack first; KiCad files don't merge.
 - Before the next fab: bump the board revision text on the silkscreen, regenerate `production/`, then **tag** the commit (e.g. `stoplight-hw-v2.0`) and attach the Gerbers to a GitHub Release.
-- An alternate buck-converter power design (August) is preserved as the tag `archive/buck_version`. `main` is the LDO design, and `production/` holds its fab files.
+- `main` is the LDO design, and `production/` holds its fab files. The earlier buck-converter version is in `main`'s history: commit `d3aed35` (Jul 24, with its production files). `c3fc9c1` switched back to the LDO.
 
 ## Contributing
 

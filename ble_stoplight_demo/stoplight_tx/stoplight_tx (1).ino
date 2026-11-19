@@ -2,20 +2,23 @@
  * stoplight_tx.ino  —  ESP32-S3 stoplight + BLE broadcaster
  *
  * Cycles the onboard RGB LED  YELLOW -> RED -> GREEN -> (repeat)
- * and broadcasts the current state over BLE advertising, e.g.
+ * and broadcasts the current state as the board's BLE name, e.g.
  *     "stoplight 1 - green"
- * Any number of receivers can listen; no pairing or connection needed.
+ * so nRF Connect (or any receiver) shows the live state with no pairing.
  *
- * Board:  ESP32S3 Dev Module   (builds on Arduino-ESP32 core 3.x or 4.x)
- * Tools:  USB CDC On Boot = Enabled  (only if you're plugged into the "USB" port
- *         instead of the "UART/COM" port and want Serial output)
+ * Uses the same advertising calls as the team's working ESP32S3_Car sketch:
+ * the library builds the packet; we only change the name and restart it.
+ *
+ * Board:  ESP32S3 Dev Module   (Arduino-ESP32 core 3.3.x, also builds on 4.x)
+ * Tools:  cable in UART port -> USB CDC On Boot = Disabled
+ *         cable in USB port  -> USB CDC On Boot = Enabled
  */
 
 #include <Arduino.h>
 #if ESP_ARDUINO_VERSION_MAJOR >= 4
-  #include <BLE.h>                 // core 4.x: new BLE API
+  #include <BLE.h>
 #else
-  #include <BLEDevice.h>           // core 3.x: classic BLEDevice API
+  #include <BLEDevice.h>
   #include <BLEAdvertising.h>
 #endif
 
@@ -24,7 +27,7 @@
 #define RGB_PIN        38       // board silkscreen "RGB@IO38" = 38; some DevKitC-1 v1.0 boards use 48
 #define BRIGHTNESS     40       // 0–255; the WS2812 is blinding at 255
 
-// Optional: also drive discrete LEDs (e.g. a stoplight PCB). Assumes active-high.
+// Optional: also drive discrete LEDs (e.g. the stoplight PCB). Assumes active-high.
 #define USE_DISCRETE_LEDS 0
 #define PIN_RED     42
 #define PIN_YELLOW  41
@@ -34,9 +37,6 @@
 #define T_GREEN   5000
 #define T_YELLOW  2000
 #define T_RED     5000
-
-// 0xFFFF = Bluetooth SIG "no company / testing" ID. The receiver filters on it.
-#define COMPANY_ID 0xFFFF
 // ------------------------------------------------
 
 enum LightState { YELLOW, RED, GREEN };
@@ -73,28 +73,17 @@ void setLed(const StateInfo& s) {
 #endif
 }
 
-// Payload budget is 31 bytes:
-//   flags AD (3) + manufacturer AD header (2) + company ID (2) = 7
-//   → 24 bytes left for text. "stoplight 99 - yellow" is 21. OK.
+// Packet: flags (3 B) + TX power (3 B) + name (2 + 20 B for "stoplight 1 - yellow")
+// = 28 of the 31 bytes allowed, so the name stays in the main broadcast packet.
 void broadcast(const char* msg) {
 #if ESP_ARDUINO_VERSION_MAJOR >= 4
-  BLEAdvertisementData data;
-  data.setFlags(BLEAdvFlag::GeneralDisc | BLEAdvFlag::BrEdrNotSupported);
-  data.setManufacturerData(COMPANY_ID, (const uint8_t*)msg, strlen(msg));
   adv.stop();
-  adv.setAdvertisementData(data);
-  adv.start();                      // 0 = advertise until stopped
+  adv.setName(msg);
+  adv.start();
 #else
-  String mfg;
-  mfg += (char)(COMPANY_ID & 0xFF); // company ID is little-endian on air
-  mfg += (char)(COMPANY_ID >> 8);
-  mfg += msg;
-  BLEAdvertisementData data;
-  data.setFlags(0x06);              // LE General Discoverable | BR/EDR not supported
-  data.setManufacturerData(mfg);
-  adv->stop();
-  adv->setAdvertisementData(data);
-  adv->start();
+  BLEDevice::stopAdvertising();
+  adv->setName(msg);
+  BLEDevice::startAdvertising();
 #endif
 }
 
@@ -106,13 +95,15 @@ void setupBLE(const char* devName) {
     while (true) delay(1000);
   }
   adv = BLE.getAdvertising();
-  adv.setType(BLEAdvType::NonConnectable);
-  adv.setScanResponse(false);
-  adv.setInterval(20, 40);          // ms → receivers see changes within ~40 ms
+  adv.setScanResponse(false);       // keep the name in the main packet so passive scanners see it
+  adv.setInterval(20, 40);          // ms
 #else
+  #if !defined(CONFIG_NIMBLE_ENABLED) && !defined(CONFIG_BT_NIMBLE_ENABLED)
+    #error "This sketch expects the NimBLE stack (ESP32-S3 on core 3.3.x uses it)."
+  #endif
   BLEDevice::init(devName);
   adv = BLEDevice::getAdvertising();
-  adv->setScanResponse(false);
+  adv->setScanResponse(true);       // same as the working car sketch
   adv->setMinInterval(0x20);        // units of 0.625 ms → 20 ms
   adv->setMaxInterval(0x40);        // 40 ms
 #endif
@@ -130,6 +121,7 @@ void setup() {
 
   char devName[20];
   snprintf(devName, sizeof(devName), "Stoplight-%d", STOPLIGHT_ID);
+  Serial.printf("\n%s booting...\n", devName);   // printed BEFORE BLE starts
   setupBLE(devName);
   Serial.printf("%s ready (core %s)\n", devName, ESP_ARDUINO_VERSION_STR);
 }
@@ -141,7 +133,7 @@ void loop() {
   snprintf(msg, sizeof(msg), "stoplight %d - %s", STOPLIGHT_ID, s.name);
 
   setLed(s);
-  broadcast(msg);                   // repeats this packet until the next change
+  broadcast(msg);                   // board's BLE name is now e.g. "stoplight 1 - red"
   Serial.println(msg);
 
   delay(s.durationMs);              // BLE runs in its own task, so delay() is fine

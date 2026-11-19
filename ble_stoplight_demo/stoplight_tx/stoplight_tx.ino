@@ -106,13 +106,18 @@ void setupBLE(const char* devName) {
     while (true) delay(1000);
   }
   adv = BLE.getAdvertising();
-  adv.setType(BLEAdvType::NonConnectable);
-  adv.setScanResponse(false);
+  // Name doesn't fit next to the message (31-byte limit), so it goes in the
+  // scan response that phones request: nRF Connect then shows "Stoplight-1".
+  adv.setType(BLEAdvType::ScannableUndirected);
+  adv.setScanResponse(true);
+  BLEAdvertisementData scanResp;
+  scanResp.setName(devName);
+  adv.setScanResponseData(scanResp);
   adv.setInterval(20, 40);          // ms → receivers see changes within ~40 ms
 #else
   BLEDevice::init(devName);
   adv = BLEDevice::getAdvertising();
-  adv->setScanResponse(false);
+  adv->setScanResponse(true);       // core 3.x puts the device name in the scan response
   adv->setMinInterval(0x20);        // units of 0.625 ms → 20 ms
   adv->setMaxInterval(0x40);        // 40 ms
 #endif
@@ -130,6 +135,7 @@ void setup() {
 
   char devName[20];
   snprintf(devName, sizeof(devName), "Stoplight-%d", STOPLIGHT_ID);
+  Serial.printf("\n%s booting...\n", devName);   // printed BEFORE BLE starts
   setupBLE(devName);
   Serial.printf("%s ready (core %s)\n", devName, ESP_ARDUINO_VERSION_STR);
 }

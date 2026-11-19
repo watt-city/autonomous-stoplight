@@ -25,7 +25,7 @@
 
 // ---------------- user settings ----------------
 #define STOPLIGHT_ID   1        // change per stoplight (keep it ≤ 2 digits)
-#define RGB_PIN        48       // DevKitC-1 v1.0 = GPIO48, v1.1 = GPIO38
+#define RGB_PIN        38       // board silkscreen "RGB@IO38" = 38; some DevKitC-1 v1.0 boards use 48
 #define BRIGHTNESS     40       // 0–255; the WS2812 is blinding at 255
 
 // Optional: also drive discrete LEDs (e.g. a stoplight PCB). Assumes active-high.
